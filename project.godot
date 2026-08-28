@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="tutorial-rpg-top-down"
+config/name="rpg-top-down"
 run/main_scene="uid://yo6osv23fwl1"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
