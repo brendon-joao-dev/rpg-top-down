@@ -101,6 +101,8 @@ _data = {
 }
 
 [node name="Pawn" unique_id=477764798 instance=ExtResource("1_d2j80")]
+_left_attack_name = "attack_axe"
+_right_attack_name = "attack_hammer"
 
 [node name="Texture" parent="." index="0" unique_id=541287814]
 position = Vector2(0, -26)
