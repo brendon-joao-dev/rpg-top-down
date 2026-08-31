@@ -9,4 +9,3 @@
 
 [node name="Pawn" parent="." unique_id=477764798 instance=ExtResource("2_debnr")]
 position = Vector2(189, 119)
-_move_speed = null
