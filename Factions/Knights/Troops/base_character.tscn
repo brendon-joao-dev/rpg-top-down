@@ -16,4 +16,6 @@ _animation = NodePath("Animation")
 
 [node name="Animation" type="AnimationPlayer" parent="." unique_id=538796341]
 
+[node name="CharacterCamera" type="Camera2D" parent="." unique_id=1487518658]
+
 [connection signal="animation_finished" from="Animation" to="." method="_on_animation_finished"]
