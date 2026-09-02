@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bsiivud7wqle7"]
+[gd_scene format=4 uid="uid://bsiivud7wqle7"]
 
 [ext_resource type="PackedScene" uid="uid://yo6osv23fwl1" path="res://Terrain/terrain_manager.tscn" id="1_8so7q"]
 [ext_resource type="PackedScene" uid="uid://ctkdgmenxts2l" path="res://Factions/Knights/Troops/Pawn/pawn.tscn" id="2_debnr"]
@@ -36,9 +36,7 @@ sources/0 = SubResource("TileSetAtlasSource_55t7r")
 [node name="TerrainManager" parent="." unique_id=2049492254 instance=ExtResource("1_8so7q")]
 
 [node name="Bridge" type="TileMapLayer" parent="." unique_id=2074042221]
-tile_set = SubResource("TileSet_vn0ie")
-
-[node name="Bridge2" type="TileMapLayer" parent="." unique_id=1474586301]
+tile_map_data = PackedByteArray("AAAUAOb/AAAAAAMAAAAUAN7/AAAAAAEAAAAUAN//AAAAAAIAAAAUAOD/AAAAAAIAAAAUAOH/AAAAAAIAAAAUAOL/AAAAAAIAAAAUAOP/AAAAAAIAAAAUAOT/AAAAAAIAAAAUAOX/AAAAAAIAAAACAAoAAAAAAAEAAAACABsAAAAAAAMAAAACABoAAAAAAAIAAAACABkAAAAAAAIAAAACABgAAAAAAAIAAAACABcAAAAAAAIAAAACABYAAAAAAAIAAAACABUAAAAAAAIAAAACABQAAAAAAAIAAAACABMAAAAAAAIAAAACABIAAAAAAAIAAAACABEAAAAAAAIAAAACABAAAAAAAAIAAAACAA8AAAAAAAIAAAACAA4AAAAAAAIAAAACAAsAAAAAAAIAAAACAAwAAAAAAAIAAAACAA0AAAAAAAIAAAA=")
 tile_set = SubResource("TileSet_vn0ie")
 
 [node name="Pawn" parent="." unique_id=477764798 instance=ExtResource("2_debnr")]
