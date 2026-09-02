@@ -38,5 +38,8 @@ sources/0 = SubResource("TileSetAtlasSource_55t7r")
 [node name="Bridge" type="TileMapLayer" parent="." unique_id=2074042221]
 tile_set = SubResource("TileSet_vn0ie")
 
+[node name="Bridge2" type="TileMapLayer" parent="." unique_id=1474586301]
+tile_set = SubResource("TileSet_vn0ie")
+
 [node name="Pawn" parent="." unique_id=477764798 instance=ExtResource("2_debnr")]
 position = Vector2(189, 119)
