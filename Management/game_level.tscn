@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://yo6osv23fwl1" path="res://Terrain/terrain_manager.tscn" id="1_8so7q"]
 [ext_resource type="PackedScene" uid="uid://ctkdgmenxts2l" path="res://Factions/Knights/Troops/Pawn/pawn.tscn" id="2_debnr"]
+[ext_resource type="Script" uid="uid://5rari3uk267n" path="res://Iteractables/bridge_area.gd" id="3_55t7r"]
 [ext_resource type="Texture2D" uid="uid://cc8gch0wochkw" path="res://Terrain/Bridge/Bridge_All.png" id="3_debnr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_55t7r"]
@@ -28,8 +29,12 @@ texture_region_size = Vector2i(64, 64)
 
 [sub_resource type="TileSet" id="TileSet_vn0ie"]
 tile_size = Vector2i(64, 64)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_55t7r")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vn0ie"]
+size = Vector2(32, 1072)
 
 [node name="GameLevel" type="Node2D" unique_id=655842351]
 
@@ -39,5 +44,18 @@ sources/0 = SubResource("TileSetAtlasSource_55t7r")
 tile_map_data = PackedByteArray("AAAUAOb/AAAAAAMAAAAUAN7/AAAAAAEAAAAUAN//AAAAAAIAAAAUAOD/AAAAAAIAAAAUAOH/AAAAAAIAAAAUAOL/AAAAAAIAAAAUAOP/AAAAAAIAAAAUAOT/AAAAAAIAAAAUAOX/AAAAAAIAAAACAAoAAAAAAAEAAAACABsAAAAAAAMAAAACABoAAAAAAAIAAAACABkAAAAAAAIAAAACABgAAAAAAAIAAAACABcAAAAAAAIAAAACABYAAAAAAAIAAAACABUAAAAAAAIAAAACABQAAAAAAAIAAAACABMAAAAAAAIAAAACABIAAAAAAAIAAAACABEAAAAAAAIAAAACABAAAAAAAAIAAAACAA8AAAAAAAIAAAACAA4AAAAAAAIAAAACAAsAAAAAAAIAAAACAAwAAAAAAAIAAAACAA0AAAAAAAIAAAAIACkAAAACAAAAAAAHACkAAAABAAAAAAAGACkAAAABAAAAAAAFACkAAAABAAAAAAAEACkAAAABAAAAAAADACkAAAABAAAAAAACACkAAAABAAAAAAABACkAAAABAAAAAAAAACkAAAABAAAAAAD//ykAAAABAAAAAAD+/ykAAAABAAAAAAD9/ykAAAABAAAAAAD8/ykAAAABAAAAAAD7/ykAAAABAAAAAAD6/ykAAAABAAAAAAD5/ykAAAABAAAAAAD4/ykAAAABAAAAAAD3/ykAAAABAAAAAAD2/ykAAAABAAAAAAD1/ykAAAABAAAAAAD0/ykAAAABAAAAAADz/ykAAAABAAAAAADy/ykAAAABAAAAAADx/ykAAAABAAAAAADw/ykAAAABAAAAAADv/ykAAAAAAAAAAADm/yUAAAACAAAAAADl/yUAAAABAAAAAADk/yUAAAABAAAAAADj/yUAAAABAAAAAADi/yUAAAABAAAAAADh/yUAAAABAAAAAADg/yUAAAABAAAAAADf/yUAAAABAAAAAADe/yUAAAABAAAAAADd/yUAAAABAAAAAADc/yUAAAABAAAAAADb/yUAAAABAAAAAADa/yUAAAAAAAAAAADW/yMAAAAAAAMAAADW/yIAAAAAAAIAAADW/yEAAAAAAAIAAADW/yAAAAAAAAIAAADW/x8AAAAAAAIAAADW/x4AAAAAAAIAAADW/x0AAAAAAAIAAADW/xwAAAAAAAIAAADW/xsAAAAAAAIAAADW/xoAAAAAAAIAAADW/xkAAAAAAAIAAADW/xgAAAAAAAIAAADW/xcAAAAAAAIAAADW/xYAAAAAAAIAAADW/xUAAAAAAAIAAADW/xQAAAAAAAIAAADW/xMAAAAAAAIAAADW/xIAAAAAAAIAAADW/xEAAAAAAAIAAADW/xAAAAAAAAIAAADW/w8AAAAAAAEAAAA=")
 tile_set = SubResource("TileSet_vn0ie")
 
+[node name="BridgeArea" type="Area2D" parent="Bridge" unique_id=87849493]
+position = Vector2(160, 688)
+collision_mask = 8
+script = ExtResource("3_55t7r")
+
+[node name="Collision" type="CollisionShape2D" parent="Bridge/BridgeArea" unique_id=219129262]
+position = Vector2(0, 526)
+shape = SubResource("RectangleShape2D_vn0ie")
+
 [node name="Pawn" parent="." unique_id=477764798 instance=ExtResource("2_debnr")]
-position = Vector2(189, 119)
+position = Vector2(50, 600)
+_move_speed = 128.0
+
+[connection signal="body_entered" from="Bridge/BridgeArea" to="Bridge/BridgeArea" method="_on_body_entered"]
+[connection signal="body_exited" from="Bridge/BridgeArea" to="Bridge/BridgeArea" method="_on_body_exited"]

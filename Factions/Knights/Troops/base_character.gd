@@ -64,3 +64,17 @@ func _on_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "attack_axe" or anim_name == "attack_hammer":
 		_can_attack = true
 		set_physics_process(true)
+
+func update_collision_layer_mask(_type: String) -> void:
+	if _type == "in":
+		set_collision_layer_value(1, false)
+		set_collision_layer_value(2, true)
+		
+		set_collision_mask_value(1, false)
+		set_collision_mask_value(2, true)
+	if _type == "out":
+		set_collision_layer_value(1, true)
+		set_collision_layer_value(2, false)
+		
+		set_collision_mask_value(1, true)
+		set_collision_mask_value(2, false)
