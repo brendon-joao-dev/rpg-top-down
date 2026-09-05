@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dc1upinyd30vf"]
+
+[ext_resource type="Script" uid="uid://by10e2bcgs2j4" path="res://Iteractables/ladder_area.gd" id="1_51bbl"]
+
+[node name="LadderArea" type="Area2D" unique_id=1367243773]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_51bbl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1261734477]
+position = Vector2(0, 1.5)
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

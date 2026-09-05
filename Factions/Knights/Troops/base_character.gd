@@ -1,6 +1,7 @@
 extends CharacterBody2D
 class_name BaseCharacter
 
+var _is_in_mountain: bool = false
 var _can_attack: bool = true
 var _attack_animation_name: String = ""
 
@@ -12,6 +13,10 @@ var _attack_animation_name: String = ""
 @export_category("Objects")
 @export var _sprite2D: Sprite2D
 @export var _animation: AnimationPlayer
+@export var _bridge: TileMapLayer
+
+func _ready() -> void:
+	update_mountain_state(_is_in_mountain)
 
 func _process(delta: float) -> void:
 	pass
@@ -78,3 +83,13 @@ func update_collision_layer_mask(_type: String) -> void:
 		
 		set_collision_mask_value(1, true)
 		set_collision_mask_value(2, false)
+
+func update_mountain_state(_state: bool) -> void:
+	_is_in_mountain = _state
+	if _is_in_mountain == false:
+		_bridge.z_index = 1
+	if _is_in_mountain == true:
+		_bridge.z_index = 0
+
+func get_is_in_mountain() ->  bool:
+	return _is_in_mountain
