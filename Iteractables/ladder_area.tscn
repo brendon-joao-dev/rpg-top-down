@@ -8,6 +8,5 @@ collision_mask = 8
 script = ExtResource("1_51bbl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1261734477]
-position = Vector2(0, 1.5)
 
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

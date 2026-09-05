@@ -37,14 +37,17 @@ sources/0 = SubResource("TileSetAtlasSource_55t7r")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gtue4"]
 size = Vector2(32, 1071)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p8jwk"]
-size = Vector2(32, 496)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qugfg"]
+size = Vector2(1583, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wkd3x"]
-size = Vector2(128, 64)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_co76o"]
+size = Vector2(751, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vn0ie"]
 size = Vector2(257, 69)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wkd3x"]
+size = Vector2(128, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_egkeg"]
 size = Vector2(64, 68)
@@ -62,29 +65,43 @@ size = Vector2(129, 68)
 [node name="Bridges" type="TileMapLayer" parent="." unique_id=2074042221]
 tile_map_data = PackedByteArray("AAAUAOb/AAAAAAMAAAAUAN7/AAAAAAEAAAAUAN//AAAAAAIAAAAUAOD/AAAAAAIAAAAUAOH/AAAAAAIAAAAUAOL/AAAAAAIAAAAUAOP/AAAAAAIAAAAUAOT/AAAAAAIAAAAUAOX/AAAAAAIAAAACAAoAAAAAAAEAAAACABsAAAAAAAMAAAACABoAAAAAAAIAAAACABkAAAAAAAIAAAACABgAAAAAAAIAAAACABcAAAAAAAIAAAACABYAAAAAAAIAAAACABUAAAAAAAIAAAACABQAAAAAAAIAAAACABMAAAAAAAIAAAACABIAAAAAAAIAAAACABEAAAAAAAIAAAACABAAAAAAAAIAAAACAA8AAAAAAAIAAAACAA4AAAAAAAIAAAACAAsAAAAAAAIAAAACAAwAAAAAAAIAAAACAA0AAAAAAAIAAAAIACkAAAACAAAAAAAHACkAAAABAAAAAAAGACkAAAABAAAAAAAFACkAAAABAAAAAAAEACkAAAABAAAAAAADACkAAAABAAAAAAACACkAAAABAAAAAAABACkAAAABAAAAAAAAACkAAAABAAAAAAD//ykAAAABAAAAAAD+/ykAAAABAAAAAAD9/ykAAAABAAAAAAD8/ykAAAABAAAAAAD7/ykAAAABAAAAAAD6/ykAAAABAAAAAAD5/ykAAAABAAAAAAD4/ykAAAABAAAAAAD3/ykAAAABAAAAAAD2/ykAAAABAAAAAAD1/ykAAAABAAAAAAD0/ykAAAABAAAAAADz/ykAAAABAAAAAADy/ykAAAABAAAAAADx/ykAAAABAAAAAADw/ykAAAABAAAAAADv/ykAAAAAAAAAAADm/yUAAAACAAAAAADl/yUAAAABAAAAAADk/yUAAAABAAAAAADj/yUAAAABAAAAAADi/yUAAAABAAAAAADh/yUAAAABAAAAAADg/yUAAAABAAAAAADf/yUAAAABAAAAAADe/yUAAAABAAAAAADd/yUAAAABAAAAAADc/yUAAAABAAAAAADb/yUAAAABAAAAAADa/yUAAAAAAAAAAADW/yMAAAAAAAMAAADW/yIAAAAAAAIAAADW/yEAAAAAAAIAAADW/yAAAAAAAAIAAADW/x8AAAAAAAIAAADW/x4AAAAAAAIAAADW/x0AAAAAAAIAAADW/xwAAAAAAAIAAADW/xsAAAAAAAIAAADW/xoAAAAAAAIAAADW/xkAAAAAAAIAAADW/xgAAAAAAAIAAADW/xcAAAAAAAIAAADW/xYAAAAAAAIAAADW/xUAAAAAAAIAAADW/xQAAAAAAAIAAADW/xMAAAAAAAIAAADW/xIAAAAAAAIAAADW/xEAAAAAAAIAAADW/xAAAAAAAAIAAADW/w8AAAAAAAEAAAA=")
 tile_set = SubResource("TileSet_vn0ie")
-collision_visibility_mode = 1
 
 [node name="BridgeArea" parent="Bridges" unique_id=2019377942 instance=ExtResource("3_qugfg")]
+visible = false
 position = Vector2(160, 688)
 
 [node name="Collision" parent="Bridges/BridgeArea" index="0" unique_id=1385410455]
 position = Vector2(0, 525.5)
 shape = SubResource("RectangleShape2D_gtue4")
 
-[node name="BridgeArea2" parent="Bridges" unique_id=2071057849 instance=ExtResource("3_qugfg")]
-position = Vector2(1311, -1669)
+[node name="BridgeArea2" parent="Bridges" unique_id=1379304369 instance=ExtResource("3_qugfg")]
+visible = false
+position = Vector2(-350, 2656)
 
 [node name="Collision" parent="Bridges/BridgeArea2" index="0" unique_id=1385410455]
-position = Vector2(1, -221)
-shape = SubResource("RectangleShape2D_p8jwk")
+position = Vector2(93.5, 0)
+shape = SubResource("RectangleShape2D_qugfg")
+
+[node name="BridgeArea3" parent="Bridges" unique_id=1183382541 instance=ExtResource("3_qugfg")]
+visible = false
+position = Vector2(-2023, 2396)
+
+[node name="Collision" parent="Bridges/BridgeArea3" index="0" unique_id=1385410455]
+position = Vector2(7.5, 4)
+shape = SubResource("RectangleShape2D_co76o")
 
 [node name="Pawn" parent="." unique_id=477764798 node_paths=PackedStringArray("_bridge") instance=ExtResource("2_debnr")]
-position = Vector2(1177, -1215)
+position = Vector2(25, 574)
 _move_speed = 128.0
 _bridge = NodePath("../Bridges")
 
 [node name="Ladders" type="Node2D" parent="." unique_id=2126271492]
-visible = false
+
+[node name="LadderArea" parent="Ladders" unique_id=472344929 instance=ExtResource("5_co76o")]
+
+[node name="CollisionShape2D" parent="Ladders/LadderArea" index="0" unique_id=1261734477]
+position = Vector2(-192.5, 733.5)
+shape = SubResource("RectangleShape2D_vn0ie")
 
 [node name="LadderArea2" parent="Ladders" unique_id=1367243773 instance=ExtResource("5_co76o")]
 position = Vector2(-1411, -671)
@@ -92,12 +109,6 @@ position = Vector2(-1411, -671)
 [node name="CollisionShape2D" parent="Ladders/LadderArea2" index="0" unique_id=1261734477]
 position = Vector2(3, -1)
 shape = SubResource("RectangleShape2D_wkd3x")
-
-[node name="LadderArea" parent="Ladders" unique_id=472344929 instance=ExtResource("5_co76o")]
-
-[node name="CollisionShape2D" parent="Ladders/LadderArea" index="0" unique_id=1261734477]
-position = Vector2(-192.5, 733.5)
-shape = SubResource("RectangleShape2D_vn0ie")
 
 [node name="LadderArea3" parent="Ladders" unique_id=651444613 instance=ExtResource("5_co76o")]
 position = Vector2(539, 2143)
@@ -122,8 +133,9 @@ shape = SubResource("RectangleShape2D_uo5fd")
 
 [editable path="Bridges/BridgeArea"]
 [editable path="Bridges/BridgeArea2"]
-[editable path="Ladders/LadderArea2"]
+[editable path="Bridges/BridgeArea3"]
 [editable path="Ladders/LadderArea"]
+[editable path="Ladders/LadderArea2"]
 [editable path="Ladders/LadderArea3"]
 [editable path="Ladders/LadderArea4"]
 [editable path="Ladders/LadderArea5"]

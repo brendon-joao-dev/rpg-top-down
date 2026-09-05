@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name BaseCharacter
 
-var _is_in_mountain: bool = false
+var _is_in_mountain: bool = true
 var _can_attack: bool = true
 var _attack_animation_name: String = ""
 
