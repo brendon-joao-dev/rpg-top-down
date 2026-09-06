@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cl5ak0hew6its"]
+
+[ext_resource type="Script" uid="uid://d02aj5el8necx" path="res://Decorations/decoration_component.gd" id="1_k80x2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vn0ie"]
+size = Vector2(64, 64)
+
+[node name="DecorationComponent" type="Node2D" unique_id=1462156404]
+y_sort_enabled = true
+script = ExtResource("1_k80x2")
+
+[node name="Textura1" type="Sprite2D" parent="." unique_id=147087454]
+position = Vector2(0, -8)
+centered = false
+
+[node name="Textura2" type="Sprite2D" parent="." unique_id=189349642]
+position = Vector2(-12, 16)
+centered = false
+
+[node name="Textura3" type="Sprite2D" parent="." unique_id=1659412374]
+position = Vector2(12, 16)
+centered = false
+
+[node name="PhysicsCollision" type="StaticBody2D" parent="." unique_id=1126674766]
+
+[node name="Collision" type="CollisionShape2D" parent="PhysicsCollision" unique_id=754931587]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_vn0ie")

@@ -8,8 +8,5 @@ func _on_body_exited(_body: Node2D) -> void:
 	if _body is BaseCharacter:
 		if  collision_shape.global_position.y > _body.global_position.y:
 			_body.update_mountain_state(true)
-			print("Lá no alto")
 		if collision_shape.global_position.y < _body.global_position.y:
 			_body.update_mountain_state(false)
-			print("Cá em baixo")
-		pass

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b0nicewgbal3d"]
+
+[ext_resource type="PackedScene" uid="uid://cl5ak0hew6its" path="res://Decorations/decoration_component.tscn" id="1_ggirl"]
+
+[node name="Mushroom" unique_id=1462156404 instance=ExtResource("1_ggirl")]
+_textures_list = Array[String](["res://Decorations/Mushroom/01.png", "res://Decorations/Mushroom/02.png", "res://Decorations/Mushroom/03.png"])
+
+[node name="Textura1" parent="." index="0" unique_id=147087454]
+texture = null
+
+[node name="Textura2" parent="." index="1" unique_id=189349642]
+texture = null
+
+[node name="Textura3" parent="." index="2" unique_id=1659412374]
+texture = null

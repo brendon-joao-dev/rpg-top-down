@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ofak4wi3usxw"]
+
+[ext_resource type="PackedScene" uid="uid://cl5ak0hew6its" path="res://Decorations/decoration_component.tscn" id="1_sy5fj"]
+
+[node name="Bushe" unique_id=1462156404 instance=ExtResource("1_sy5fj")]
+_textures_list = Array[String](["res://Decorations/Bushes/07.png", "res://Decorations/Bushes/08.png", "res://Decorations/Bushes/09.png"])
