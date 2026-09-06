@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7i2a3ce4vlu2"
-path="res://.godot/imported/17.png-f70e14eccbecd5a394f9061d567ff1fc.ctex"
+uid="uid://c8i4xyfgtljdj"
+path="res://.godot/imported/02.png-70e40646d71b87e5d7246077f6611d22.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Decorations/Signs/17.png"
-dest_files=["res://.godot/imported/17.png-f70e14eccbecd5a394f9061d567ff1fc.ctex"]
+source_file="res://Decorations/Bushes/02.png"
+dest_files=["res://.godot/imported/02.png-70e40646d71b87e5d7246077f6611d22.ctex"]
 
 [params]
 

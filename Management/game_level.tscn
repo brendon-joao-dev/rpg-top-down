@@ -3,10 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://yo6osv23fwl1" path="res://Terrain/terrain_manager.tscn" id="1_8so7q"]
 [ext_resource type="PackedScene" uid="uid://ctkdgmenxts2l" path="res://Factions/Knights/Troops/Pawn/pawn.tscn" id="2_debnr"]
 [ext_resource type="Texture2D" uid="uid://cc8gch0wochkw" path="res://Terrain/Bridge/Bridge_All.png" id="3_debnr"]
-[ext_resource type="PackedScene" uid="uid://dq1fjpvayfn5l" path="res://Iteractables/bridge_area.tscn" id="3_qugfg"]
-[ext_resource type="PackedScene" uid="uid://dc1upinyd30vf" path="res://Iteractables/ladder_area.tscn" id="5_co76o"]
-[ext_resource type="PackedScene" uid="uid://b0nicewgbal3d" path="res://Decorations/Mushroom/mushroom.tscn" id="6_co76o"]
-[ext_resource type="PackedScene" uid="uid://dxx7dlrb3of4n" path="res://Decorations/Rocks/rock.tscn" id="6_m8gmb"]
+[ext_resource type="PackedScene" uid="uid://dq1fjpvayfn5l" path="res://Iteractables/Bridge/bridge_area.tscn" id="3_qugfg"]
+[ext_resource type="PackedScene" uid="uid://dc1upinyd30vf" path="res://Iteractables/Ladder/ladder_area.tscn" id="5_co76o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_55t7r"]
 texture = ExtResource("3_debnr")
@@ -136,48 +134,17 @@ position = Vector2(-64, 64)
 _move_speed = 128.0
 _bridge = NodePath("../../Bridges")
 
-[node name="Mushrooms" type="Node2D" parent="Decorations" unique_id=2073793108]
+[node name="Bones" type="Node2D" parent="Decorations" unique_id=1817612761]
 
-[node name="Mushroom" parent="Decorations/Mushrooms" unique_id=1462156404 instance=ExtResource("6_co76o")]
-position = Vector2(0, 1792)
+[node name="Bushes" type="Node2D" parent="Decorations" unique_id=1185760336]
 
-[node name="Mushroom2" parent="Decorations/Mushrooms" unique_id=415853191 instance=ExtResource("6_co76o")]
-position = Vector2(256, 1856)
+[node name="Grass" type="Node2D" parent="Decorations" unique_id=276797921]
 
-[node name="Mushroom3" parent="Decorations/Mushrooms" unique_id=646307475 instance=ExtResource("6_co76o")]
-position = Vector2(192, 1984)
+[node name="Mushrooms" type="Node2D" parent="Decorations" unique_id=28998653]
 
-[node name="Mushroom4" parent="Decorations/Mushrooms" unique_id=282510151 instance=ExtResource("6_co76o")]
-position = Vector2(448, 2112)
+[node name="Rocks" type="Node2D" parent="Decorations" unique_id=1450730656]
 
-[node name="Mushroom5" parent="Decorations/Mushrooms" unique_id=1524985590 instance=ExtResource("6_co76o")]
-position = Vector2(832, 2432)
-
-[node name="Mushroom6" parent="Decorations/Mushrooms" unique_id=673827868 instance=ExtResource("6_co76o")]
-position = Vector2(512, 2496)
-
-[node name="Mushroom7" parent="Decorations/Mushrooms" unique_id=1947357842 instance=ExtResource("6_co76o")]
-position = Vector2(704, 2560)
-
-[node name="Mushroom8" parent="Decorations/Mushrooms" unique_id=85363392 instance=ExtResource("6_co76o")]
-position = Vector2(768, 2688)
-
-[node name="Rocks" type="Node2D" parent="Decorations" unique_id=1928941246]
-
-[node name="Rock" parent="Decorations/Rocks" unique_id=376389541 instance=ExtResource("6_m8gmb")]
-position = Vector2(576, 1920)
-
-[node name="Rock2" parent="Decorations/Rocks" unique_id=488021205 instance=ExtResource("6_m8gmb")]
-position = Vector2(768, 1792)
-
-[node name="Rock3" parent="Decorations/Rocks" unique_id=1301545672 instance=ExtResource("6_m8gmb")]
-position = Vector2(896, 1984)
-
-[node name="Rock4" parent="Decorations/Rocks" unique_id=2002893017 instance=ExtResource("6_m8gmb")]
-position = Vector2(704, 2240)
-
-[node name="Rock5" parent="Decorations/Rocks" unique_id=573583996 instance=ExtResource("6_m8gmb")]
-position = Vector2(256, 2496)
+[node name="Sings" type="Node2D" parent="Decorations" unique_id=2015276210]
 
 [editable path="Bridges/BridgeArea"]
 [editable path="Bridges/BridgeArea2"]

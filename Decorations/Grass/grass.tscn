@@ -3,4 +3,4 @@
 [ext_resource type="PackedScene" uid="uid://cl5ak0hew6its" path="res://Decorations/decoration_component.tscn" id="1_ihnys"]
 
 [node name="Grass" unique_id=1462156404 instance=ExtResource("1_ihnys")]
-_textures_list = Array[String](["res://Decorations/Grass/10.png", "res://Decorations/Grass/11.png"])
+_textures_list = Array[String](["res://Decorations/Grass/01.png", "res://Decorations/Grass/02.png"])

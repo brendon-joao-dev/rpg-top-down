@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dc1upinyd30vf"]
 
-[ext_resource type="Script" uid="uid://by10e2bcgs2j4" path="res://Iteractables/ladder_area.gd" id="1_51bbl"]
+[ext_resource type="Script" uid="uid://by10e2bcgs2j4" path="res://Iteractables/Ladder/ladder_area.gd" id="1_51bbl"]
 
 [node name="LadderArea" type="Area2D" unique_id=1367243773]
 collision_layer = 8

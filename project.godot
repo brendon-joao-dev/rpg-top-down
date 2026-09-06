@@ -13,7 +13,6 @@ config_version=5
 config/name="rpg-top-down"
 run/main_scene="uid://bsiivud7wqle7"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [display]
 

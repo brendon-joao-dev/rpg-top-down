@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dq1fjpvayfn5l"]
 
-[ext_resource type="Script" uid="uid://5rari3uk267n" path="res://Iteractables/bridge_area.gd" id="1_gtue4"]
+[ext_resource type="Script" uid="uid://5rari3uk267n" path="res://Iteractables/Bridge/bridge_area.gd" id="1_gtue4"]
 
 [node name="BridgeArea" type="Area2D" unique_id=2019377942]
 collision_mask = 8
