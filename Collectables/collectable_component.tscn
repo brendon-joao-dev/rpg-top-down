@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://uwwhfnys13gm"]
+
+[ext_resource type="Script" uid="uid://de4r4bl42i4yv" path="res://Collectables/collectable_component.gd" id="1_sf0ud"]
+
+[node name="CollectableComponent" type="Area2D" unique_id=1807304069]
+script = ExtResource("1_sf0ud")
+
+[node name="Texture" type="Sprite2D" parent="." unique_id=1540362361]
+
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=1876240339]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

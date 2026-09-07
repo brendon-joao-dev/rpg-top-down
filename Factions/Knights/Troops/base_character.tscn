@@ -6,9 +6,6 @@
 collision_layer = 9
 collision_mask = 9
 script = ExtResource("1_jdal0")
-_move_speed = null
-_left_attack_name = null
-_right_attack_name = null
 _sprite2D = NodePath("Texture")
 _animation = NodePath("Animation")
 
@@ -20,4 +17,7 @@ _animation = NodePath("Animation")
 
 [node name="CharacterCamera" type="Camera2D" parent="." unique_id=1487518658]
 
+[node name="AttackArea" type="Area2D" parent="." unique_id=1220175932]
+
 [connection signal="animation_finished" from="Animation" to="." method="_on_animation_finished"]
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]

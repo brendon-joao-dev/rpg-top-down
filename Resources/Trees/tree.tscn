@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://dyijbmjisstda"]
+
+[ext_resource type="Texture2D" uid="uid://7ek68ct35017" path="res://Resources/Trees/Tree.png" id="1_2onhi"]
+[ext_resource type="Script" uid="uid://ctcodqnttv1an" path="res://Resources/Trees/tree.gd" id="1_xahfi"]
+
+[sub_resource type="Animation" id="Animation_xahfi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_2onhi"]
+resource_name = "hit"
+length = 0.19999999999999998
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_axmnx"]
+resource_name = "idle"
+length = 0.39999999999999997
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_k0aqa"]
+resource_name = "kill"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.02326613),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k0aqa"]
+_data = {
+&"RESET": SubResource("Animation_xahfi"),
+&"hit": SubResource("Animation_2onhi"),
+&"idle": SubResource("Animation_axmnx"),
+&"kill": SubResource("Animation_k0aqa")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vn0ie"]
+size = Vector2(64, 64)
+
+[node name="Tree" type="StaticBody2D" unique_id=2041639407 node_paths=PackedStringArray("_animation")]
+script = ExtResource("1_xahfi")
+_animation = NodePath("Animation")
+
+[node name="Texture" type="Sprite2D" parent="." unique_id=819959467]
+position = Vector2(-64, -128)
+texture = ExtResource("1_2onhi")
+centered = false
+hframes = 4
+vframes = 3
+
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=340735538]
+libraries/ = SubResource("AnimationLibrary_k0aqa")
+autoplay = &"idle"
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=790144890]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_vn0ie")
+
+[connection signal="animation_finished" from="Animation" to="." method="_on_animation_animation_finished"]
