@@ -419,6 +419,7 @@ position = Vector2(-704, 512)
 
 [node name="Pawn" parent="Decorations" unique_id=477764798 node_paths=PackedStringArray("_bridge") instance=ExtResource("2_debnr")]
 position = Vector2(-64, 64)
+_move_speed = 512.0
 _bridge = NodePath("../../Bridges")
 
 [editable path="Bridges/BridgeArea"]
