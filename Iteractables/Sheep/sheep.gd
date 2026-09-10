@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Sheep
 
+const _MEAT_COLLECTABLE: PackedScene = preload("res://Collectables/meat.tscn")
+
 var _is_dead: bool = false
 var _health: int
 var _wait_time: float
@@ -12,6 +14,8 @@ var _regular_move_speed: float
 @export var _move_speed: float = 128.0
 @export var _min_health: int = 5
 @export var _max_health: int = 15
+@export var _min_meat: int = 1
+@export var _max_meat: int = 5
 
 @export_category("Objects")
 @export var _sprite: Sprite2D
@@ -68,7 +72,12 @@ func update_health(_damage_range: Array) -> void: # [1, 5]
 	_move_speed *= 4
 
 func _spawn_meat() -> void:
-	pass
+	var _meat_amount: int = randi_range(_min_meat, _max_meat)
+	for _i in _meat_amount:
+		var _meat: CollectableComponent = _MEAT_COLLECTABLE.instantiate()
+		_meat.global_position = global_position + Vector2(randi_range(-32, 32), randi_range(-32, 32))
+		get_tree().root.call_deferred("add_child", _meat)
+
 
 func _get_direction() -> Vector2:
 	return [

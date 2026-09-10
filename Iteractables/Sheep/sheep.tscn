@@ -69,6 +69,7 @@ _data = {
 motion_mode = 1
 platform_on_leave = 2
 script = ExtResource("1_vgxib")
+_max_health = 25
 _sprite = NodePath("Texture")
 _animation = NodePath("AnimationPlayer")
 _walk_timer = NodePath("WalkTimer")
