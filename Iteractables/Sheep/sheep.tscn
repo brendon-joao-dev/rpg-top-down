@@ -65,13 +65,14 @@ _data = {
 &"walk": SubResource("Animation_t67ig")
 }
 
-[node name="Sheep" type="CharacterBody2D" unique_id=1601588914 node_paths=PackedStringArray("_sprite", "_animation", "_walk_timer")]
+[node name="Sheep" type="CharacterBody2D" unique_id=1601588914 node_paths=PackedStringArray("_sprite", "_animation", "_walk_timer", "_run_timer")]
 motion_mode = 1
 platform_on_leave = 2
 script = ExtResource("1_vgxib")
 _sprite = NodePath("Texture")
 _animation = NodePath("AnimationPlayer")
 _walk_timer = NodePath("WalkTimer")
+_run_timer = NodePath("RunTimer")
 
 [node name="Texture" type="Sprite2D" parent="." unique_id=1524212979]
 position = Vector2(0, -17)
@@ -91,4 +92,8 @@ autoplay = &"idle"
 [node name="WalkTimer" type="Timer" parent="." unique_id=917087854]
 one_shot = true
 
+[node name="RunTimer" type="Timer" parent="." unique_id=1200821850]
+one_shot = true
+
 [connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]
+[connection signal="timeout" from="RunTimer" to="." method="_on_run_timer_timeout"]

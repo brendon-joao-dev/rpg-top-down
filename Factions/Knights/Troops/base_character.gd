@@ -100,5 +100,8 @@ func get_is_in_mountain() ->  bool:
 	return _is_in_mountain
 
 func _on_attack_area_body_entered(_body: Node2D) -> void:
-	if _body is PhysicsTree:
+	if (
+		_body is PhysicsTree or 
+		_body is Sheep
+	):
 		_body.update_health([_min_attack, _max_attack])

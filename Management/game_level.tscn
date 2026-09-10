@@ -420,6 +420,8 @@ position = Vector2(-704, 512)
 
 [node name="Pawn" parent="Decorations" unique_id=477764798 node_paths=PackedStringArray("_bridge") instance=ExtResource("2_debnr")]
 position = Vector2(-64, 64)
+_min_attack = 5
+_max_attack = 15
 _bridge = NodePath("../../Bridges")
 
 [node name="Sheep" parent="Decorations" unique_id=1601588914 instance=ExtResource("14_37ad1")]

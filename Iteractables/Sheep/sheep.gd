@@ -1,19 +1,29 @@
 extends CharacterBody2D
 class_name Sheep
 
+var _is_dead: bool = false
+var _health: int
 var _wait_time: float
+var _run_wait_time: float
 var _direction: Vector2
+var _regular_move_speed: float
 
 @export_category("Variables")
 @export var _move_speed: float = 128.0
+@export var _min_health: int = 5
+@export var _max_health: int = 15
 
 @export_category("Objects")
 @export var _sprite: Sprite2D
 @export var _animation: AnimationPlayer
 @export var _walk_timer: Timer
+@export var _run_timer: Timer
 
 func _ready() -> void:
+	_regular_move_speed = _move_speed
+	_health = randi_range(_min_health, _max_health)
 	_wait_time = randf_range(5.0, 15.0)
+	_run_wait_time = randf_range(1.0, 3.0)
 	_direction = _get_direction()
 	_walk_timer.start(_wait_time)
 
@@ -41,6 +51,25 @@ func _animate() -> void:
 	
 	_animation.play("idle")
 
+func update_health(_damage_range: Array) -> void: # [1, 5]
+	if _is_dead:
+		return
+	
+	_health -= randi_range(_damage_range[0], _damage_range[1])
+	
+	if _health <= 0:
+		_spawn_meat()
+		_is_dead = true
+		queue_free()
+		return
+		
+	_direction = _get_direction()
+	_run_timer.start(_run_wait_time)
+	_move_speed *= 4
+
+func _spawn_meat() -> void:
+	pass
+
 func _get_direction() -> Vector2:
 	return [
 		Vector2(-1, 0),  # esquerda
@@ -56,10 +85,11 @@ func _get_direction() -> Vector2:
 
 func _on_walk_timer_timeout() -> void:
 	_walk_timer.start(_wait_time)
-	print(_wait_time)
-	print(_direction)
 	if _direction == Vector2.ZERO:
 		_direction = _get_direction()
 		return
 	
 	_direction = Vector2.ZERO
+
+func _on_run_timer_timeout() -> void:
+	_move_speed =  _regular_move_speed
