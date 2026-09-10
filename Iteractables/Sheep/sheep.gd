@@ -78,7 +78,6 @@ func _spawn_meat() -> void:
 		_meat.global_position = global_position + Vector2(randi_range(-32, 32), randi_range(-32, 32))
 		get_tree().root.call_deferred("add_child", _meat)
 
-
 func _get_direction() -> Vector2:
 	return [
 		Vector2(-1, 0),  # esquerda

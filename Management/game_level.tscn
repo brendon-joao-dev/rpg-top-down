@@ -12,8 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://dxx7dlrb3of4n" path="res://Decorations/Rocks/rock.tscn" id="8_5m0y5"]
 [ext_resource type="PackedScene" uid="uid://ca0y6ku6786pq" path="res://Decorations/Grass/grass.tscn" id="8_6lxch"]
 [ext_resource type="PackedScene" uid="uid://cbqtf682veg65" path="res://Decorations/Signs/decoration_sign.tscn" id="10_5m0y5"]
-[ext_resource type="PackedScene" uid="uid://dyijbmjisstda" path="res://Resources/Trees/tree.tscn" id="13_6lxch"]
+[ext_resource type="PackedScene" uid="uid://dyijbmjisstda" path="res://Iteractables/Trees/tree.tscn" id="13_6lxch"]
 [ext_resource type="PackedScene" uid="uid://cfb8ho48etclv" path="res://Iteractables/Sheep/sheep.tscn" id="14_37ad1"]
+[ext_resource type="PackedScene" uid="uid://bujbctkpw5gac" path="res://Iteractables/Gold Mine/gold_mine.tscn" id="15_fk5p6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_55t7r"]
 texture = ExtResource("3_debnr")
@@ -418,14 +419,26 @@ position = Vector2(-1024, 1088)
 [node name="Tree7" parent="Decorations" unique_id=171268139 instance=ExtResource("13_6lxch")]
 position = Vector2(-704, 512)
 
+[node name="Sheep" parent="Decorations" unique_id=1601588914 instance=ExtResource("14_37ad1")]
+position = Vector2(-704, 192)
+
+[node name="Sheep2" parent="Decorations" unique_id=938548050 instance=ExtResource("14_37ad1")]
+position = Vector2(-448, 256)
+
+[node name="Sheep3" parent="Decorations" unique_id=1879534847 instance=ExtResource("14_37ad1")]
+position = Vector2(-576, 384)
+
+[node name="GoldMine" parent="Decorations" unique_id=8158516 instance=ExtResource("15_fk5p6")]
+position = Vector2(-832, 1408)
+_default_production_time = 10.0
+_additional_production_time = 15.0
+
 [node name="Pawn" parent="Decorations" unique_id=477764798 node_paths=PackedStringArray("_bridge") instance=ExtResource("2_debnr")]
 position = Vector2(-64, 64)
 platform_on_leave = 0
 _min_attack = 5
 _max_attack = 15
 _bridge = NodePath("../../Bridges")
-
-[node name="Sheep" parent="Decorations" unique_id=1601588914 instance=ExtResource("14_37ad1")]
 
 [editable path="Bridges/BridgeArea"]
 [editable path="Bridges/BridgeArea2"]

@@ -96,6 +96,9 @@ func update_mountain_state(_state: bool) -> void:
 	if _is_in_mountain == true:
 		_bridge.z_index = 0
 
+func has_resource(_item_name: String, _amount: int) -> bool:
+	return true
+
 func get_is_in_mountain() ->  bool:
 	return _is_in_mountain
 

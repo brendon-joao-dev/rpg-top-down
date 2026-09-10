@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bujbctkpw5gac"]
+
+[ext_resource type="Script" uid="uid://du74e7o1tjmxq" path="res://Iteractables/Gold Mine/gold_mine.gd" id="1_8fkcr"]
+[ext_resource type="Texture2D" uid="uid://dkt54phjix1cx" path="res://Resources/Gold Mine/GoldMine_Destroyed.png" id="1_mhh5p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vn0ie"]
+size = Vector2(157, 52)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vn0ie"]
+radius = 96.0
+
+[node name="GoldMine" type="StaticBody2D" unique_id=8158516 node_paths=PackedStringArray("_sprit2D", "_production_timer")]
+script = ExtResource("1_8fkcr")
+_default_production_time = null
+_additional_production_time = null
+_sprit2D = NodePath("Texture")
+_production_timer = NodePath("ProductionTimer")
+
+[node name="Texture" type="Sprite2D" parent="." unique_id=46386012]
+texture = ExtResource("1_mhh5p")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=440004650]
+position = Vector2(-0.5, 16)
+shape = SubResource("RectangleShape2D_vn0ie")
+
+[node name="GoldMineArea" type="Area2D" parent="." unique_id=255766416]
+collision_layer = 8
+collision_mask = 8
+
+[node name="Collision" type="CollisionShape2D" parent="GoldMineArea" unique_id=1373490417]
+visible = false
+shape = SubResource("CircleShape2D_vn0ie")
+
+[node name="ProductionTimer" type="Timer" parent="." unique_id=1687402953]
+one_shot = true
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1824571441]
+wait_time = 5.0
+autostart = true
+
+[connection signal="body_entered" from="GoldMineArea" to="." method="_on_gold_mine_area_body_entered"]
+[connection signal="body_exited" from="GoldMineArea" to="." method="_on_gold_mine_area_body_exited"]
+[connection signal="timeout" from="ProductionTimer" to="." method="_on_production_timer_timeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
