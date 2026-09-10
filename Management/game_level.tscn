@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://ca0y6ku6786pq" path="res://Decorations/Grass/grass.tscn" id="8_6lxch"]
 [ext_resource type="PackedScene" uid="uid://cbqtf682veg65" path="res://Decorations/Signs/decoration_sign.tscn" id="10_5m0y5"]
 [ext_resource type="PackedScene" uid="uid://dyijbmjisstda" path="res://Resources/Trees/tree.tscn" id="13_6lxch"]
+[ext_resource type="PackedScene" uid="uid://cfb8ho48etclv" path="res://Iteractables/Sheep/sheep.tscn" id="14_37ad1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_55t7r"]
 texture = ExtResource("3_debnr")
@@ -419,8 +420,9 @@ position = Vector2(-704, 512)
 
 [node name="Pawn" parent="Decorations" unique_id=477764798 node_paths=PackedStringArray("_bridge") instance=ExtResource("2_debnr")]
 position = Vector2(-64, 64)
-_move_speed = 512.0
 _bridge = NodePath("../../Bridges")
+
+[node name="Sheep" parent="Decorations" unique_id=1601588914 instance=ExtResource("14_37ad1")]
 
 [editable path="Bridges/BridgeArea"]
 [editable path="Bridges/BridgeArea2"]

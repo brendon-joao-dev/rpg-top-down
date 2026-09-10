@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cfb8ho48etclv"]
 
+[ext_resource type="Script" uid="uid://gjhrqf7bi3mc" path="res://Iteractables/Sheep/sheep.gd" id="1_vgxib"]
 [ext_resource type="Texture2D" uid="uid://cln1ilklwi7ly" path="res://Resources/Sheep/HappySheep_All.png" id="1_ywfjb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ywfjb"]
@@ -64,7 +65,13 @@ _data = {
 &"walk": SubResource("Animation_t67ig")
 }
 
-[node name="Sheep" type="CharacterBody2D" unique_id=1601588914]
+[node name="Sheep" type="CharacterBody2D" unique_id=1601588914 node_paths=PackedStringArray("_sprite", "_animation", "_walk_timer")]
+motion_mode = 1
+platform_on_leave = 2
+script = ExtResource("1_vgxib")
+_sprite = NodePath("Texture")
+_animation = NodePath("AnimationPlayer")
+_walk_timer = NodePath("WalkTimer")
 
 [node name="Texture" type="Sprite2D" parent="." unique_id=1524212979]
 position = Vector2(0, -17)
@@ -80,3 +87,8 @@ shape = SubResource("CapsuleShape2D_ywfjb")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=177805649]
 libraries/ = SubResource("AnimationLibrary_k1v4j")
 autoplay = &"idle"
+
+[node name="WalkTimer" type="Timer" parent="." unique_id=917087854]
+one_shot = true
+
+[connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]
