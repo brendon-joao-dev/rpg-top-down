@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name BaseCharacter
 
-var _is_in_mountain: bool = true
+var _is_in_bridge: bool = false
 var _can_attack: bool = true
 var _attack_animation_name: String = ""
 
@@ -19,7 +19,7 @@ var _attack_animation_name: String = ""
 @export var _attack_area_collision: CollisionShape2D
 
 func _ready() -> void:
-	update_mountain_state(_is_in_mountain)
+	pass
 
 func _process(delta: float) -> void:
 	pass
@@ -66,10 +66,6 @@ func _animate() -> void:
 
 	_animation.play("idle")
 
-# 	print(_direction)
-# 	print(_direction.length())
-
-
 func _on_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "attack_axe" or anim_name == "attack_hammer":
 		_can_attack = true
@@ -89,18 +85,18 @@ func update_collision_layer_mask(_type: String) -> void:
 		set_collision_mask_value(1, true)
 		set_collision_mask_value(2, false)
 
-func update_mountain_state(_state: bool) -> void:
-	_is_in_mountain = _state
-	if _is_in_mountain == false:
-		_bridge.z_index = 1
-	if _is_in_mountain == true:
-		_bridge.z_index = 0
+func update_bridge_state(_state: bool) -> void:
+	_is_in_bridge = _state
+	if _is_in_bridge == true:
+		z_index = 1
+	if _is_in_bridge == false:
+		z_index = 0
 
 func has_resource(_item_name: String, _amount: int) -> bool:
 	return true
 
-func get_is_in_mountain() ->  bool:
-	return _is_in_mountain
+func get_is_in_bridge() ->  bool:
+	return _is_in_bridge
 
 func _on_attack_area_body_entered(_body: Node2D) -> void:
 	if (
